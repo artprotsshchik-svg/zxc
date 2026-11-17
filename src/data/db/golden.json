@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Embeddium",
+    "role": "Стабильный стандарт 3D-рендера чанков (ABI-основа Forge 1.20.1)"
+  },
+  {
+    "name": "(Sodium) Chloride",
+    "role": "Главный активный аддон Embeddium (41M+ CF: дин. свет, зум, куллинг мобов)"
+  },
+  {
+    "name": "Flerovium",
+    "role": "Ускорение рендера предметов, мобов и частиц на 30–50% поверх Embeddium"
+  },
+  {
+    "name": "ImmediatelyFast",
+    "role": "Мгновенный рендер шрифтов, GUI, подсказок (мульти-лоадер)"
+  },
+  {
+    "name": "Entity Culling",
+    "role": "Мировой лидер асинхронного отсечения мобов и сундуков за стенами (tr7zw)"
+  },
+  {
+    "name": "More Culling Reforged",
+    "role": "Доп. куллинг невидимых граней ступеней, заборов и блоков"
+  },
+  {
+    "name": "Enhanced Block Entities Reloaded",
+    "role": "Запекание сундуков и печей в меши (требует MatLib)"
+  },
+  {
+    "name": "CullLessLeaves Reforged",
+    "role": "Умное отсечение скрытых граней листвы"
+  },
+  {
+    "name": "ModernFix",
+    "role": "Дедупликация структур, ускорение запуска, фикс утечек"
+  },
+  {
+    "name": "FerriteCore",
+    "role": "Экономия до 40% RAM на моделях блоков"
+  },
+  {
+    "name": "AllTheLeaks",
+    "role": "Устранение утечек памяти при переходах между мирами (82M+ CF)"
+  },
+  {
+    "name": "Jasione",
+    "role": "Устранение клонирования массивов Enum.values()"
+  },
+  {
+    "name": "Put A Plug In it!",
+    "role": "Глушит спам логов, спасая диск от зависаний"
+  },
+  {
+    "name": "Radium Re-Reforged",
+    "role": "Актуальный порт Lithium (физика, ИИ, воронки и редстоун)"
+  },
+  {
+    "name": "BadOptimizations",
+    "role": "Вырезание бесполезных ванильных микро-проверок"
+  },
+  {
+    "name": "ServerCore",
+    "role": "Динамический view-distance и умный троттлинг ИИ/жителей"
+  },
+  {
+    "name": "Immersive Optimization",
+    "role": "Entity Tick Scheduler — замедление дальних мобов без поломки ферм"
+  },
+  {
+    "name": "Ixeris",
+    "role": "Плавный ввод мыши без микрофризов на Windows"
+  },
+  {
+    "name": "Noisiumed",
+    "role": "Ускорение генерации мира и биомов в 2-3 раза (актуальный форк Noisium)"
+  },
+  {
+    "name": "Structure Layout Optimizer",
+    "role": "Ускорение генерации Jigsaw-структур и данжей (31M+ CF)"
+  },
+  {
+    "name": "Smooth Boot (Reloaded)",
+    "role": "Безопасное распределение потоков при старте без поломки спавн-чанков"
+  },
+  {
+    "name": "Dynamic FPS",
+    "role": "Снижение нагрузки до 1-5 FPS при сворачивании окна (и RestMode для AFK)"
+  },
+  {
+    "name": "Fastvancements",
+    "role": "Устранение лагов при выдаче достижений"
+  },
+  {
+    "name": "Clumps",
+    "role": "Объединение сотен сфер опыта на фермах в один сгусток (380M+ CF)"
+  },
+  {
+    "name": "Let Me Despawn",
+    "role": "Безопасный деспавн застрявших мобов (76M+ CF)"
+  },
+  {
+    "name": "Packet Fixer",
+    "role": "Снимает лимит NBT сетевых пакетов 2 МБ (116M+ CF)"
+  },
+  {
+    "name": "Spark",
+    "role": "Официальный золотой стандарт диагностики лагов (221M+ CF)"
+  }
+]

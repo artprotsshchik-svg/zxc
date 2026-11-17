@@ -1,0 +1,258 @@
+[
+  {
+    "title": "Конфликт движков рендера чанков (Форки Sodium)",
+    "category": "Рендер, culling и FPS",
+    "conflictingMods": [
+      "Embeddium",
+      "Rubidium",
+      "Xenon",
+      "Xenon Debloated",
+      "Emberbium",
+      "Prismanium",
+      "Polidium",
+      "Sodium",
+      "VulkanMod"
+    ],
+    "explanation": "Все эти моды являются самостоятельными движками рендера (форками Sodium или заменами конвейера). Примечание: (Sodium) Chloride, Alloyium и Flerovium НЕ конфликтуют с Embeddium — это аддоны к нему! Установка двух основных движков сразу вызовет краш OpenGL.",
+    "recommendation": "Оставьте ТОЛЬКО Embeddium (или Emberbium для Emberlens) + совместимые аддоны."
+  },
+  {
+    "title": "Катастрофический конфликт с OptiFine",
+    "category": "Рендер, culling и FPS",
+    "conflictingMods": [
+      "OptiFine",
+      "Embeddium",
+      "Emberbium",
+      "Xenon",
+      "ModernFix",
+      "Flywheel",
+      "Oculus",
+      "Emberlens"
+    ],
+    "explanation": "OptiFine — закрытый монолит, переписывающий базовые классы рендеринга Minecraft. При совместной установке с современными модами (Embeddium, Flywheel, ModernFix, Oculus, Emberlens) игра гарантированно падает с ошибкой NoSuchMethodError / IncompatibleClassChangeError при запуске.",
+    "recommendation": "Полностью удалите OptiFine из папки mods. Вся его функциональность делится на: Embeddium (FPS), Oculus (шейдеры), EBER (сундуки), Embeddium Extras / Chloride (зум и детали)."
+  },
+  {
+    "title": "Конфликт Nvidium и шейдеров (Oculus / Emberlens / Iris)",
+    "category": "Рендер, culling и FPS",
+    "conflictingMods": [
+      "Nvidium",
+      "Oculus",
+      "Emberlens",
+      "Iris Shaders"
+    ],
+    "explanation": "Nvidium использует прямой конвейер Mesh Shaders OpenGL, который несовместим с буферами шейдер-паков. При активном Nvidium Emberlens сам по себе не вызывает краш — он просто не работает, однако активация шейдеров конфликтует с Nvidium и отключает/ломает Mesh Shaders.",
+    "recommendation": "Без шейдеров на NVIDIA RTX оставьте Nvidium и уберите Emberlens/Oculus. Если нужны шейдеры — оставьте Emberlens (+ Emberbium) или Oculus (+ Embeddium) и отключите Nvidium."
+  },
+  {
+    "title": "Конфликт шейдерных движков (Oculus ↔ Emberlens)",
+    "category": "Рендер, culling и FPS",
+    "conflictingMods": [
+      "Oculus",
+      "Emberlens",
+      "Iris Shaders"
+    ],
+    "explanation": "Emberlens — это форк и замена Oculus, жёстко привязанная к Emberbium вместо Embeddium. Одновременная установка Oculus и Emberlens вызывает дублирование Iris API и краш.",
+    "recommendation": "Используйте либо связку Embeddium + Oculus, либо связку Emberbium + Emberlens."
+  },
+  {
+    "title": "Конфликт GPU-рендеров чанков (Nvidium ↔ Alloyium / Acedium)",
+    "category": "Рендер, culling и FPS",
+    "conflictingMods": [
+      "Nvidium",
+      "Alloyium",
+      "Revidium / Acedium"
+    ],
+    "explanation": "Nvidium (NVIDIA Mesh Shaders) и Alloyium (OpenGL Compute + Indirect Draw) перехватывают один и тот же этап отрисовки геометрии чанков Sodium/Embeddium. Совместная работа вызывает визуальные артефакты или падение рендера.",
+    "recommendation": "На NVIDIA без шейдеров берите Nvidium; для AMD/Intel, нативного Forge без Sinytra или игры с шейдерами Oculus берите Alloyium."
+  },
+  {
+    "title": "Дублирование версий C2ME (Fabric C2ME ↔ C2ME-Forge ↔ C2MER)",
+    "category": "Чанки и генерация мира",
+    "conflictingMods": [
+      "C2ME (Concurrent Chunk Management Engine)",
+      "Concurrent Chunk Management Engine - Forge (C2MEF)",
+      "C2MER"
+    ],
+    "explanation": "Все три варианта реализуют многопоточное распараллеливание чанков C2ME. Одновременная установка двух портов вызывает конфликт миксинов и потоков генерации мира.",
+    "recommendation": "Выберите строго один вариант: оригинальный C2ME через Sinytra Connector либо нативный порт C2ME-Forge (C2MEF)."
+  },
+  {
+    "title": "Дублирование портов VMP (Fabric VMP ↔ VMP Forge)",
+    "category": "Тики, TPS, сущности и ИИ",
+    "conflictingMods": [
+      "Very Many Players (VMP)",
+      "Very Many Players (Forge)"
+    ],
+    "explanation": "Оба мода — версии Very Many Players (VMP). Совместное подключение нативного Forge-порта и Fabric-версии через Sinytra вызовет конфликт классов.",
+    "recommendation": "Для чистого Forge 1.20.1 выберите Very Many Players (Forge)."
+  },
+  {
+    "title": "Дублирование Noisium (Noisiumed ↔ Noisium архив)",
+    "category": "Чанки и генерация мира",
+    "conflictingMods": [
+      "Noisiumed",
+      "Noisium (архив)"
+    ],
+    "explanation": "Noisiumed является актуальным форком Noisium с одинаковыми хуками генератора мира.",
+    "recommendation": "Удалите архивный Noisium и оставьте Noisiumed."
+  },
+  {
+    "title": "Конфликт движков освещения",
+    "category": "Освещение",
+    "conflictingMods": [
+      "Starlight with Create Fix",
+      "Solix",
+      "ScalableLux",
+      "Lucis (серверное)",
+      "Radon"
+    ],
+    "explanation": "Моды полностью заменяют ванильный световой конвейер (LightEngine) на асинхронные структуры данных. Два световых движка одновременно приведут к повреждению чанков света или зависанию генерации мира. (Примечание: LightStar кэширует только клиентские запросы в Embeddium).",
+    "recommendation": "На Forge 1.20.1 используйте либо ванильный свет 1.20+ (+ LightStar), либо один движок Solix."
+  },
+  {
+    "title": "Конфликт оптимизаторов листвы",
+    "category": "Рендер, culling и FPS",
+    "conflictingMods": [
+      "CullLessLeaves Reforged",
+      "OptiLeaves",
+      "Leaves Culling",
+      "Sodium Leaf Culling (Unofficial)",
+      "Sodium/Embeddium Leaf Culling"
+    ],
+    "explanation": "Моды пытаются модифицировать одни и те же шейдеры и модели листьев, вызывая мелькание текстур листвы или черные грани.",
+    "recommendation": "Используйте только CullLessLeaves Reforged. Отключите встроенный Leaf Culling в настройках графики."
+  },
+  {
+    "title": "Конфликт сетевых оптимизаторов",
+    "category": "Сеть",
+    "conflictingMods": [
+      "Krypton Reno",
+      "Krypton Hybrid",
+      "Pluto",
+      "Krypton Foxified",
+      "AegisNetworking (не ставить вместе с Krypton Hybrid)",
+      "Krypton"
+    ],
+    "explanation": "Моды вмешиваются в сетевой конвейер Netty, что при дублировании приводит к потере пакетов и разрыву соединения.",
+    "recommendation": "Для чистого Forge 1.20.1 используйте Krypton Reno или Pluto (для гибрид-серверов Mohist/Arclight — Krypton Hybrid)."
+  },
+  {
+    "title": "Конфликт редиректов и перехвата методов",
+    "category": "Память и утечки",
+    "conflictingMods": [
+      "Redirected",
+      "Redirector [Modern]",
+      "Jasione"
+    ],
+    "explanation": "Данные моды заменяют одинаковые байткод-вызовы методов в Java. Старые версии вызывают краши.",
+    "recommendation": "Удалите старые Redirected и Redirector. Оставьте только Jasione (или ModernFix)."
+  },
+  {
+    "title": "Дубликаты оптимизаторов достижений",
+    "category": "Асинхронность, кеш и авторизация",
+    "conflictingMods": [
+      "Fastvancements",
+      "Achievements Optimizer",
+      "Icterine",
+      "Cerulean"
+    ],
+    "explanation": "Все эти моды патчат один и тот же ванильный класс PlayerAdvancements. Одновременная установка приводит к дублированию событий или крашу при выполнении квестов.",
+    "recommendation": "Оставьте только Fastvancements."
+  },
+  {
+    "title": "Дублирование портов Lithium (Radium vs Canary vs Lithium)",
+    "category": "Тики, TPS, сущности и ИИ",
+    "conflictingMods": [
+      "Radium Reforged (оригинал)",
+      "Radium Re-Reforged",
+      "Canary",
+      "Lithium"
+    ],
+    "explanation": "Radium Re-Reforged, Radium Reforged, Canary и Fabric Lithium патчат одни и те же классы физики, ИИ и воронок. У версий Radium еще и одинаковый mod id \"radium\" — игра упадет сразу при старте.",
+    "recommendation": "Используйте только один актуальный движок: Radium Re-Reforged (нативно для Forge 1.20.1)."
+  },
+  {
+    "title": "Конфликт компенсации тиков (TT20 vs TickAccelerate)",
+    "category": "Тики, TPS, сущности и ИИ",
+    "conflictingMods": [
+      "TT20 (TPS Fixer)",
+      "TickAccelerate"
+    ],
+    "explanation": "Оба мода масштабируют внутренние таймеры тиков клиентского рендеринга для сглаживания рывков при просевшем TPS сервера. При совместной установке игра начинает дергаться с удвоенной скоростью или сбоит физика передвижения.",
+    "recommendation": "Удалите оба для стабильности, либо оставьте максимум один в крайнем случае."
+  },
+  {
+    "title": "Конфликт динамической прорисовки",
+    "category": "Чанки и генерация мира",
+    "conflictingMods": [
+      "DynamicRenderDistance",
+      "[DRD] Dynamic Render Distance"
+    ],
+    "explanation": "Два мода динамически меняют render distance в зависимости от текущего FPS. Возникает эффект «резонанса» дальности прорисовки, когда дистанция скачет туда-сюда каждые 2 секунды.",
+    "recommendation": "Оставьте только один из них (лучше [DRD] Dynamic Render Distance)."
+  },
+  {
+    "title": "Конфликт оптимизаторов сундуков",
+    "category": "Рендер, culling и FPS",
+    "conflictingMods": [
+      "Enhanced Block Entities Reloaded",
+      "Enhanced Block Entities Reforged (Unofficial)",
+      "FastChest Revived",
+      "Legendary Block Entities",
+      "Optimized Block Entities (OBE)"
+    ],
+    "explanation": "Моды преобразуют анимации сундуков в статические модели блоков. Их одновременная работа приводит к исчезновению текстур сундуков или крашу при открытии двойных сундуков.",
+    "recommendation": "Используйте только один из актуальных: Enhanced Block Entities Reloaded (EBER) или Legendary Block Entities."
+  },
+  {
+    "title": "Опасность автоклинеров памяти (System.gc)",
+    "category": "Память и утечки",
+    "conflictingMods": [
+      "Simply Server Ram Optimizer [Cleaner]",
+      "MemGuard",
+      "GcGo (серверное)",
+      "Slime: Heuristic Memory Purger (серверное)",
+      "RAMization",
+      "Furia Memory",
+      "Recoleta",
+      "Sanitivy",
+      "Clean Memory",
+      "Memory Cleaning",
+      "Better RAM",
+      "Memory Optimizer"
+    ],
+    "explanation": "Принудительные вызовы System.gc() ломают расписание работы JVM-сборщиков G1GC/ZGC, порождая резкие лаги и стоп-кадры каждые пару минут.",
+    "recommendation": "Удалите клинеры памяти. Используйте FerriteCore + ModernFix + выделение 6-8 ГБ ОЗУ."
+  },
+  {
+    "title": "Конфликт ModernFix с устаревшим DashLoader",
+    "category": "Загрузка игры и ресурспаков",
+    "conflictingMods": [
+      "ModernFix",
+      "DashLoader"
+    ],
+    "explanation": "Оба мода перехватывают загрузку и кэширование JSON-моделей/ресурсов. На Forge через Sinytra Connector DashLoader гарантированно вызывает краш.",
+    "recommendation": "Удалите DashLoader и оставьте ModernFix (с опцией Dynamic Resources)."
+  },
+  {
+    "title": "Конфликт TMRV Updated с Just Enough Items (JEI)",
+    "category": "Предметы, контейнеры и рецепты",
+    "conflictingMods": [
+      "TMRV Updated",
+      "Just Enough Items (JEI)"
+    ],
+    "explanation": "TMRV Updated разработан как прямая замена ядра JEI внутри EMI для запуска JEI-плагинов без самого JEI. Если установить TMRV вместе с JEI, классы API сталкиваются при загрузке.",
+    "recommendation": "Для EMI без JEI оставьте EMI + TMRV Updated. Если нужен именно JEI вместе с EMI — удалите TMRV Updated (EMI нативно подхватит установленный JEI)."
+  },
+  {
+    "title": "Дублирование Accelerated Rendering",
+    "category": "Рендер, culling и FPS",
+    "conflictingMods": [
+      "Accelerated Rendering",
+      "Accelerated Rendering: Turned"
+    ],
+    "explanation": "Оба мода перехватывают GPU-инстансинг сущностей OpenGL 4.6 одним и тем же конвейером. Совместная установка несовместима.",
+    "recommendation": "Используйте основной Accelerated Rendering от Argon4W."
+  }
+]
